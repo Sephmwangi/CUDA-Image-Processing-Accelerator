@@ -1,4 +1,6 @@
-cmake_minimum_required(VERSION 3.18)
-project(CUDAImageProcessing LANGUAGES CXX CUDA)
+find_package(OpenCV REQUIRED)
 
-add_executable(cuda_app src/main.cpp src/grayscale.cu src/sobel.cu)
+target_link_libraries(
+    cuda_image_processing
+    ${OpenCV_LIBS}
+)
